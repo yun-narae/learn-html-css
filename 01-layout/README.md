@@ -1,6 +1,3 @@
-## 반응형 사이트 만들기
-참고 강의[💻 site](https://www.inflearn.com/course/%EB%B0%98%EC%9D%91%ED%98%95-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%8B%A4%EC%8A%B5/dashboard)
-
 ###시멘틱 태그
 <nav>
 - 모든 링크가 <nav>태그일 필요는 없지만, 주요 네비게이션 링크는 <nav>태그를 사용합니다.
@@ -14,6 +11,3 @@
 <section>과 <article>
 - <section>은 하나의 주제를 나타낸다면, <article>은 주제를 묶는 독립적인 콘텐츠를 나타냅니다.
 - <section>안에 <article>를 쓸 수 있으며 <article>안에도 <section>을 쓸 수 있습니다.
-
-###미디어 쿼리
-미디어 쿼리는 화면 크기에 따른 각각의 속성 값을 지정하여, 여러가지 화면을 구성하는 기술입니다.
