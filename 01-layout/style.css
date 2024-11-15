@@ -5,16 +5,30 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    outline: 1px solid silver;
+    outline: 0px solid silver;
+}
+
+.container {
+    text-align: center;
+    margin-top: 280px;
 }
 
 .card-box {
     position: relative;
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     height: 360px;
+    display: inline-block;
+    margin: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    &:hover {
+        .img-wrap > img {
+            transition: ease-in-out 0.5s;
+            width: 110%;
+        }
+    }
 }
 
 .text-wrap {
@@ -22,6 +36,7 @@
     bottom: 0;
     z-index: 1;
     padding: 24px;
+    text-align: left;
     color: #fff;
 }
 
@@ -53,8 +68,8 @@
     background-size: 24px;
     border-radius: 60px;
     cursor: pointer;
+    transition: 0.5;
     &:hover {
         background-color: #e9e7e7;
-        transition: 0.5;
     }
 }
