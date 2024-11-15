@@ -1,13 +1,2 @@
-###시멘틱 태그
-<nav>
-- 모든 링크가 <nav>태그일 필요는 없지만, 주요 네비게이션 링크는 <nav>태그를 사용합니다.
-- <footer>에는 <nav>태그를 사용하지 않습니다.
-
-<section>
-- 주제별 그룹의 콘텐츠 섹션을 정의합니다. 문장이나 문서의 스타일링 요소가 아닙니다.
-- 스크립트의 편의나 영역을 위함이라면 div쓰세요. 또한 일반적인 영역의 주제가 아니라면 구체적인 요소(<article>,<aside>,<nav>)를 대신 사용하는 것이 더 적절합니다.
-- 제목을 나타내는 <h1>~<h6>태그가 포함되어야 합니다.
-
-<section>과 <article>
-- <section>은 하나의 주제를 나타낸다면, <article>은 주제를 묶는 독립적인 콘텐츠를 나타냅니다.
-- <section>안에 <article>를 쓸 수 있으며 <article>안에도 <section>을 쓸 수 있습니다.
+### 실습
+Card UI 코드로 만들기(Class와 ID)[💻 site](https://www.youtube.com/watch?v=i72xG6ukehk&list=PLkbzizJk4Ae_ZCinIZzwLf4XDh1NvjmyE&index=7)

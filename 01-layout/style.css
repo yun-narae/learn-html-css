@@ -1,29 +1,9 @@
-#wrap {
-    width: 62.5rem;
-    margin: 0 auto;
-}
-
-header {
-    height: 6.25rem;
-    background-color: #f0f8ff;
-}
-
-nav {
-    height: 6.25rem;
-    background-color: #dbe7f2;
-}
-
-aside {
-    height: 37.5rem;
-    background-color: #bdd0e1;
-}
-
-section {
-    height: 37.5rem;
-    background-color: #afcce6;
-}
-
-footer {
-    height: 6.25rem;
-    background-color: #91a3b4;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: 0px solid silver;
 }
