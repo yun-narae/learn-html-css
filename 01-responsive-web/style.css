@@ -3,27 +3,27 @@
     margin: 0 auto;
 }
 
-.header {
+header {
     height: 6.25rem;
     background-color: #f0f8ff;
 }
 
-.nav {
+nav {
     height: 6.25rem;
     background-color: #dbe7f2;
 }
 
-.side {
+aside {
     height: 37.5rem;
     background-color: #bdd0e1;
 }
 
-.contents {
+section {
     height: 37.5rem;
     background-color: #afcce6;
 }
 
-.footer {
+footer {
     height: 6.25rem;
     background-color: #91a3b4;
 }
