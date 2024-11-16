@@ -30,8 +30,7 @@
     &:hover {
         .img-wrap > img {
             transition: ease-in-out 0.5s;
-            transform:scale(1.1);
-            z-index: -1;
+            width: 110%;
         }
     }
 }
@@ -51,7 +50,10 @@
     align-items: center;
     img {
         width: 100%;
-        height: auto;
+        position:absolute;
+        top: 50%;
+        transform:translateY(-50%);
+        z-index: -1;
     }
 
     .img-gradient {
