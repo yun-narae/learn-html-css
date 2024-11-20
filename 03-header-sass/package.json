@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.81.0"
+  },
+  "scripts": {
+    "start": "run-p sass-watch scss-watch dev",
+    "dev": "live-server src --port=3000 --host=localhost",
+    "sass": "sass src/sass:src/styles",
+    "scss": "sass src/scss:src/css",
+    "sass-no-map": "npm run sass -- --no-source-map",
+    "scss-no-map": "npm run scss -- --no-source-map",
+    "sass-watch": "npm run sass-no-map -- --watch",
+    "scss-watch": "npm run scss-no-map -- --watch",
+    "compressed": "npm run sass --style compressed",
+    "clean": "rm -rf src/css src/styles"
+  }
+}
