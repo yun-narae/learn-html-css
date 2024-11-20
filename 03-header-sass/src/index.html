@@ -13,6 +13,39 @@
     <script type="module" src="/main.js"></script>
 </head>
 <body>
-    <h1>03-header-sass</h1>
+    <header>
+        <h1 class="logo">
+            <a href="#!">
+                <img src="./asset/logo.jpg" alt="로고">
+            </a>
+        </h1>
+        <nav class="navigation">
+            <ul class="menu">
+                <li class="menu__list">
+                    <a href="#!" class="menu__link">디자인스낵</a>
+                </li>
+                <li class="menu__list">
+                    <a href="#!" class="menu__link">무료 소스</a>
+                </li>
+                <li class="menu__list">
+                    <a href="#!" class="menu__link">북마크</a>
+                </li>
+                <li class="menu__list">
+                    <a href="#!" class="menu__link">소개</a>
+                </li>
+            </ul>
+        </nav>
+        <button type="button" class="button more-btn">
+            <i class="more-btn__icon icon">문의하기</i>
+        </button>
+        <ul class="sns-wrap">
+            <li><a href=""><i class="sns-wrap__icon icon twitter"></i></a></li>
+            <li><a href=""><i class="sns-wrap__icon icon instagram"></i></a></li>
+            <li><a href=""><i class="sns-wrap__icon icon facebook"></i></a></li>
+        </ul>
+        <button type="button" class="button nav-btn">
+            <i class="nav-btn__icon icon"></i>
+        </button>
+    </header>
 </body>
 </html>
