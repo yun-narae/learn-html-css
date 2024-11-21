@@ -56,16 +56,119 @@ body {
   border-width: 0;
 }
 
-header {
-  background-color: beige;
+.header-wrapper {
+  background-color: #f5f5f7;
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  clip: rect(0, 0, 0, 0);
-  clip-path: polygon(0 0, 0 0, 0 0);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.header {
+  padding-left: 0.75rem;
+  padding-inline-start: 0.75rem;
+  padding-right: 0.75rem;
+  padding-inline-end: 0.75rem;
+  padding-top: 0.75rem;
+  padding-block-start: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-block-end: 0.75rem;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.header .logo a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   overflow: hidden;
-  padding: 0;
-  white-space: nowrap;
-  border-width: 0;
+  width: 40px;
+  inline-size: 40px;
+  height: 40px;
+  block-size: 40px;
+}
+.header .logo a img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: 62.5rem;
+}
+.header .nav-btn {
+  width: 40px;
+  inline-size: 40px;
+  height: 40px;
+  block-size: 40px;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.header .navigation {
+  text-align: center;
+  margin-left: 0;
+  margin-inline-start: 0;
+  margin-right: 0;
+  margin-inline-end: 0;
+  margin-top: 20px;
+  margin-block-start: 20px;
+  margin-bottom: 20px;
+  margin-block-end: 20px;
+}
+.header .navigation .menu__list {
+  margin-bottom: 12px;
+}
+.header .navigation .menu__link {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-inline-start: 0.75rem;
+  padding-right: 0.75rem;
+  padding-inline-end: 0.75rem;
+  padding-top: 0.75rem;
+  padding-block-start: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-block-end: 0.75rem;
+  font-size: 0.875rem;
+}
+.header .more-btn {
+  border: 0px;
+  background-color: #0077ED;
+  font-size: 0.875rem;
+  font-weight: bold;
+  width: 100%;
+  inline-size: 100%;
+  margin-bottom: 24px;
+  margin-block-end: 24px;
+  border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-inline-start: 0.75rem;
+  padding-right: 0.75rem;
+  padding-inline-end: 0.75rem;
+  padding-top: 0.75rem;
+  padding-block-start: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-block-end: 0.75rem;
+}
+.header .social-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .social-wrap a {
+  background-color: #0077ED;
+  width: 40px;
+  inline-size: 40px;
+  height: 40px;
+  block-size: 40px;
+  border-radius: 62.5rem;
+  display: flex;
+  flex-direction: center;
+  flex-wrap: center;
+  justify-content: center;
+  align-items: center;
 }

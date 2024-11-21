@@ -1,3 +1,68 @@
-header {
-    background-color: beige;
+@use './../utils' as *;
+
+.header-wrapper {
+    background-color: rgba($white,1);
+    @include position(absolute,0);
+}
+
+.header {
+    @include padding($small-spacing);
+    @include position(relative,0);
+
+    .logo {
+        a {
+            @include flexbox;
+            overflow: hidden;
+            @include size(40px, 40px);
+            img {
+                @include flexbox;
+                @include radius(full);
+            }
+        }
+    }
+
+    .nav-btn {
+        @include size(40px, 40px);
+        @include position(absolute, $small-spacing $small-spacing null null);
+    }
+
+    .navigation {
+        text-align: center;
+        @include margin(0, 20px);
+        .menu {
+            &__list {
+                margin-bottom: 12px;
+            }
+            &__link {
+                @include flexbox(column);
+                @include radius(xs);
+                @include padding($small-spacing);
+                font-size: $x-small-text;
+            }
+        }
+    }
+
+    .more-btn {
+        border: 0px;
+        background-color: $blue-200;
+        font-size: $x-small-text;
+        font-weight: bold;
+        @include size(100%);
+        @include margin-block-end(24px);
+        @include radius(xs);
+        @include padding($small-spacing);
+    }
+    .social-wrap {
+        text-align: center;
+        @include flexbox(column, null, null, center);
+        &__list{
+
+        }
+        a {
+            background-color: $blue-200;
+            @include size(40px, 40px);
+            @include radius(full);
+            @include flexbox(center, center, center, center);
+        }
+    }
 }
