@@ -40,6 +40,10 @@
         .menu {
             &__list {
                 margin-bottom: rem(12px);
+                @include radius(xs);
+                &:hover {
+                    background-color: $gray-100;
+                }   
             }
             &__link {
                 @include flexbox(column);
@@ -51,14 +55,19 @@
     }
 
     .more-btn {
-        border: rem(0px);
-        background-color: $blue-200;
+        cursor: pointer;
+        border: none;
+        background-color: $blue-100;
         font-size: $x-small-text;
         font-weight: bold;
+        box-shadow: 3px 4px 16px 8px rgba(0, 0, 0, 0.1);
         @include size(100%);
         @include margin-block-end(rem(24px));
         @include radius(xs);
         @include padding($small-spacing);
+        &:hover {
+            background-color: $blue-300;
+        }
     }
 
     .social-wrap {
@@ -74,6 +83,9 @@
             @include setIcons(icon_social_youtube, rem(24px), '../assets/icon/header', $blue-300);
             @include setIcons(icon_social_instagram, 24px, '../assets/icon/header', $blue-300);
             @include setIcons(icon_social_facebook, 24px, '../assets/icon/header', $blue-300);
+            &:hover {
+                background-color: $gray-100;
+            }
         }
     }
     
@@ -81,6 +93,10 @@
         @include size(40px, 40px);
         @include position(absolute, $small-spacing $small-spacing null null);
         @extend %button-reset, %icon-center;
+        @include radius(full);
         @include setIcons(icon_nav_close, 24px, '../assets/icon/header', $blue-300);
+        &:hover {
+            background-color: $gray-100;
+        }
     }
 }
