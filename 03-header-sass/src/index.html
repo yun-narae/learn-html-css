@@ -13,6 +13,46 @@
     <script type="module" src="/main.js"></script>
 </head>
 <body>
-    <h1>03-header-sass</h1>
+    <div class="header-wrapper">
+        <header class="header">
+            <h1 class="logo">
+                <a href="#!">
+                    <img src="./assets/logo.jpg" alt="로고">
+                </a>
+            </h1>
+            <nav class="navigation">
+                <ul class="menu">
+                    <li class="menu__list">
+                        <a href="#!" class="menu__link">디자인스낵</a>
+                    </li>
+                    <li class="menu__list">
+                        <a href="#!" class="menu__link">무료 소스</a>
+                    </li>
+                    <li class="menu__list">
+                        <a href="#!" class="menu__link">북마크</a>
+                    </li>
+                    <li class="menu__list">
+                        <a href="#!" class="menu__link">소개</a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="button" id="btnMore" class="button more-btn">
+                문의하기
+            </button>
+            <ul class="social-wrap">
+                <li class="social-wrap__list">
+                    <a href="#!"><i class="social-wrap__icon icon icon_social_youtube"></i></a>
+                </li>
+                <li class="social-wrap__list">
+                    <a href="#!"><i class="social-wrap__icon icon icon_social_instagram"></i></a></li>
+                <li class="social-wrap__list">
+                    <a href="#!"><i class="social-wrap__icon icon icon_social_facebook"></i></a>
+                </li>
+            </ul>
+            <button type="button" id="btnNav" class="button nav-btn">
+                <i class="nav-btn__icon icon icon_nav_close"></i>
+            </button>
+        </header>
+    </div>
 </body>
 </html>

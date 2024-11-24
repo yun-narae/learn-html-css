@@ -7,6 +7,8 @@
 - 환경 세팅의 쓴맛보기(sass,live-server 패키지)
 - 반응형
 - .js 맛보기
+- 마크업 👉 style 👉 js 순으로 진행
+- Sass(Sass의 문법 중  SCSS Syntax 를 사용)
 
 ## 내 앞길을 가로막은 것들
 
