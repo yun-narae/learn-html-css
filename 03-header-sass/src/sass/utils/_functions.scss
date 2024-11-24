@@ -13,9 +13,11 @@ $rootUnit: 16px;
 }
 
 // px을 rem 단위로 변경하는 함수 ------------------------------------------------------- /
+// margin-bottom: rem(12px);
 @function rem($value, $base: 16) {
   @return math.div(removeUnit($value), $base) * 1rem;
 }
+
 
 // px을 em 단위로 변경하는 함수 ------------------------------------------------------- /
 @function em($value, $base: 16) {
