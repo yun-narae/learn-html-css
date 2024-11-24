@@ -2,7 +2,7 @@
 /* 스타일 초기화 */
 h1, h2, h3, h4, h5, h6 {
   font: inherit;
-  font-size: 1em;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -45,15 +45,26 @@ body {
 /* 숨김 콘텐츠 */
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
   clip: rect(0, 0, 0, 0);
   clip-path: polygon(0 0, 0 0, 0 0);
   overflow: hidden;
   padding: 0;
   white-space: nowrap;
   border-width: 0;
+}
+
+.header .nav-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.header .nav-btn, .header .social-wrap__list a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-wrapper {
@@ -85,10 +96,10 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   overflow: hidden;
-  width: 40px;
-  inline-size: 40px;
-  height: 40px;
-  block-size: 40px;
+  width: 2.5rem;
+  inline-size: 2.5rem;
+  height: 2.5rem;
+  block-size: 2.5rem;
 }
 .header .logo a img {
   display: flex;
@@ -96,28 +107,23 @@ body {
   flex-wrap: nowrap;
   border-radius: 62.5rem;
 }
-.header .nav-btn {
-  width: 40px;
-  inline-size: 40px;
-  height: 40px;
-  block-size: 40px;
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-}
 .header .navigation {
   text-align: center;
   margin-left: 0;
   margin-inline-start: 0;
   margin-right: 0;
   margin-inline-end: 0;
-  margin-top: 20px;
-  margin-block-start: 20px;
-  margin-bottom: 20px;
-  margin-block-end: 20px;
+  margin-top: 1.25rem;
+  margin-block-start: 1.25rem;
+  margin-bottom: 1.25rem;
+  margin-block-end: 1.25rem;
 }
 .header .navigation .menu__list {
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+  border-radius: 0.25rem;
+}
+.header .navigation .menu__list:hover {
+  background-color: rgb(225, 225, 225);
 }
 .header .navigation .menu__link {
   display: flex;
@@ -135,14 +141,16 @@ body {
   font-size: 0.875rem;
 }
 .header .more-btn {
-  border: 0px;
-  background-color: #0077ED;
+  cursor: pointer;
+  border: none;
+  background-color: #248ff4;
   font-size: 0.875rem;
   font-weight: bold;
+  box-shadow: 3px 4px 16px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   inline-size: 100%;
-  margin-bottom: 24px;
-  margin-block-end: 24px;
+  margin-bottom: 1.5rem;
+  margin-block-end: 1.5rem;
   border-radius: 0.25rem;
   padding-left: 0.75rem;
   padding-inline-start: 0.75rem;
@@ -153,22 +161,64 @@ body {
   padding-bottom: 0.75rem;
   padding-block-end: 0.75rem;
 }
-.header .social-wrap {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.header .more-btn:hover {
+  background-color: #0071e3;
 }
-.header .social-wrap a {
-  background-color: #0077ED;
+.header .social-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.875rem;
+}
+.header .social-wrap__list a {
+  cursor: pointer;
+  border-radius: 62.5rem;
+  width: 2.5rem;
+  inline-size: 2.5rem;
+  height: 2.5rem;
+  block-size: 2.5rem;
+}
+.header .social-wrap__list a .icon_social_youtube {
+  mask-image: url("../assets/icon/header/icon_social_youtube.svg");
+  background-color: #0071e3;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+.header .social-wrap__list a .icon_social_instagram {
+  mask-image: url("../assets/icon/header/icon_social_instagram.svg");
+  background-color: #0071e3;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.header .social-wrap__list a .icon_social_facebook {
+  mask-image: url("../assets/icon/header/icon_social_facebook.svg");
+  background-color: #0071e3;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.header .social-wrap__list a:hover {
+  background-color: rgb(225, 225, 225);
+}
+.header .nav-btn {
   width: 40px;
   inline-size: 40px;
   height: 40px;
   block-size: 40px;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
   border-radius: 62.5rem;
-  display: flex;
-  flex-direction: center;
-  flex-wrap: center;
-  justify-content: center;
-  align-items: center;
+}
+.header .nav-btn .icon_nav_close {
+  mask-image: url("../assets/icon/header/icon_nav_close.svg");
+  background-color: #0071e3;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.header .nav-btn:hover {
+  background-color: rgb(225, 225, 225);
 }
