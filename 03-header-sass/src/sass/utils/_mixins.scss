@@ -59,26 +59,25 @@
 }
 
 // 미디어쿼리 중단점
-$breakpoints: (
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  2xl: 1536,
-);
+$tablet: 768px;
+$laptop: 1020px;
+$desktop: 1400px;
 
 // 미디어쿼리 믹스인
-@mixin mq($breakpoint) {
-  @each $key, $value in $breakpoints {
-    @if not map.has-key($breakpoints, $breakpoint) {
-      @error '#{$breakpoint}는 유효한 중단점이 아닙니다.(유효한 값:sm, md, lg, xl, 2xl)';
-    }
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
   }
+}
 
-  $viewport: map.get($breakpoints, $breakpoint);
-  $query: string.unquote('min-width: #{$viewport}px');
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
 
-  @media ($query) {
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
     @content;
   }
 }
