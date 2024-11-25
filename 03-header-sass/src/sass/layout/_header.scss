@@ -5,7 +5,7 @@
     border: none;
 }
 
-%icon-center {
+%center {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,15 +17,22 @@
 }
 
 .header {
-    @include padding($small-spacing);
+    max-width: rem(1024px);
+    margin: 0 auto; // header 가운데 위치
+    display: grid;
+    @include padding($base-spacing);
     @include position(relative,0);
+    @include laptop {
+        grid-template-columns: 1fr 1fr auto;
+        column-gap: rem(40px);
+    }
 
     .logo {
         a {
             @include flexbox;
             overflow: hidden;
             @include size(rem(40px), rem(40px));
-
+            
             img {
                 @include flexbox;
                 @include radius(full);
@@ -35,48 +42,53 @@
 
     .navigation {
         text-align: center;
-        @include margin(0, rem(20px));
-
+        @include marginY(rem(20px));
+        @extend %center;
+        @include laptop {
+            @include marginY(0);
+        }
+        
         .menu {
+            width: 100%;
+            max-width: rem(732px);
+            word-break: keep-all;
+            display: grid;
+            row-gap: rem(12px);
+            @include laptop {
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: rem(24px);
+            }
+
             &__list {
-                margin-bottom: rem(12px);
+                cursor: pointer;
+                @include radius(xs);
+                @include laptop {
+                    @include margin(0);
+                }
+            }
+            
+            &__link {
+                display: block;
+                font-size: $x-small-text;
+                @include padding($small-spacing);
                 @include radius(xs);
                 &:hover {
                     background-color: $gray-100;
-                }   
+                }
             }
-            &__link {
-                @include flexbox(column);
-                @include radius(xs);
-                @include padding($small-spacing);
-                font-size: $x-small-text;
-            }
-        }
-    }
-
-    .more-btn {
-        cursor: pointer;
-        border: none;
-        background-color: $blue-100;
-        font-size: $x-small-text;
-        font-weight: bold;
-        box-shadow: 3px 4px 16px 8px rgba(0, 0, 0, 0.1);
-        @include size(100%);
-        @include margin-block-end(rem(24px));
-        @include radius(xs);
-        @include padding($small-spacing);
-        &:hover {
-            background-color: $blue-300;
         }
     }
 
     .social-wrap {
-        @include flexbox(null, null, center, center);
         gap: rem(14px);
-
+        @include flexbox(null, null, center, center);
+        @include laptop {
+            display: none;
+        }
+        
         &__list a {
             cursor: pointer;
-            @extend %icon-center;
+            @extend %center;
             @include radius(full);
             @include size(rem(40px), rem(40px));
             // setIcons
@@ -89,14 +101,45 @@
         }
     }
     
-    .nav-btn {
-        @include size(40px, 40px);
-        @include position(absolute, $small-spacing $small-spacing null null);
-        @extend %button-reset, %icon-center;
-        @include radius(full);
-        @include setIcons(icon_nav_close, 24px, '../assets/icon/header', $blue-300);
-        &:hover {
-            background-color: $gray-100;
+    .btn-box {
+        @extend %center;
+        @include laptop {
+            justify-content: end;
+        }
+        
+        &__nav-btn {
+            @include size(rem(40px), rem(40px));
+            @include position(absolute, $base-spacing $base-spacing null null);
+            @extend %button-reset, %center;
+            @include radius(full);
+            @include setIcons(icon_nav_close, rem(24px), '../assets/icon/header', $blue-300);
+            &:hover {
+                background-color: $gray-100;
+            }
+            @include laptop {
+                display: none;
+            }
+        }
+
+        &__more-btn {
+            width: 100%;
+            max-width: rem(732px);
+            cursor: pointer;
+            border: none;
+            background-color: $blue-100;
+            font-size: $x-small-text;
+            font-weight: bold;
+            box-shadow: $box-shadow-1;
+            @include margin-block-end(rem(24px));
+            @include radius(xs);
+            @include padding($small-spacing);
+            &:hover {
+                background-color: $blue-300;
+            }
+            @include laptop {
+                width: rem(120px);
+                @include margin(0);
+            }
         }
     }
 }
