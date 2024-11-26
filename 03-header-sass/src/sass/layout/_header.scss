@@ -105,8 +105,10 @@
     }
     
     .btn-box {
+        width: 100%;
         @extend %center;
         @include laptop {
+            width: auto;
             justify-content: end;
         }
         
@@ -133,7 +135,6 @@
             font-size: $x-small-text;
             font-weight: bold;
             box-shadow: $box-shadow-1;
-            @include margin-block-end(rem(24px));
             @include radius(xs);
             @include padding($small-spacing);
             &:hover {
@@ -141,7 +142,6 @@
             }
             @include laptop {
                 width: rem(120px);
-                @include margin(0);
             }
         }
     }
