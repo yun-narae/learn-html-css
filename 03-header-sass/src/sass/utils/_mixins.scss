@@ -17,11 +17,7 @@
 // 아이콘
 // @include setIcons(icon_social_youtube, rem(24px), '../assets/icon/header');
 // 부모한테 
-// @extend %button-reset, %icon-center; 넣어줘야합니다.
-// %button-reset {
-//   background-color: transparent;
-//   border: none;
-// }
+// @extend %icon-center; 넣어줘야합니다.
 // %icon-center {
 //   display: flex;
 //   align-items: center;
@@ -31,6 +27,7 @@
   @each $name in $icons {
     .#{$name} {
       mask-image: url('#{$path}/#{$name}.svg');
+      -webkit-mask-image: url('#{$path}/#{$name}.svg');
       background-color: $fill-color; // svg 컬러
       width: $size;
       height: $size;
