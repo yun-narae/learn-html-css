@@ -23,7 +23,7 @@
     @include padding($base-spacing);
     @include position(relative,0);
     @include laptop {
-        grid-template-columns: 1fr 1fr auto;
+        grid-template-columns: 1fr auto auto;
         column-gap: rem(40px);
     }
 
@@ -43,9 +43,12 @@
     .navigation {
         text-align: center;
         @include marginY(rem(20px));
-        @extend %center;
+        @include flexbox(column, null, center, center);
+        column-gap: rem(40px);
+        row-gap: rem(40px);
         @include laptop {
             @include marginY(0);
+            @include flexbox(row, null, center, center);
         }
         
         .menu {
