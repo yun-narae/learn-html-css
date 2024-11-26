@@ -13,7 +13,7 @@
 
 .header-wrapper {
     background-color: rgba($white,1);
-    @include position(absolute,0);
+    @include position(fixed, 0 0 null 0);
 }
 
 .header {
@@ -50,7 +50,9 @@
             @include marginY(0);
             @include flexbox(row, null, center, center);
         }
-        
+        // nav js
+        display: none;
+
         .menu {
             width: 100%;
             max-width: rem(732px);
@@ -117,7 +119,7 @@
             @include position(absolute, $base-spacing $base-spacing null null);
             @extend %button-reset, %center;
             @include radius(full);
-            @include setIcons(icon_nav_close, rem(24px), '../assets/icon/header', $blue-300);
+            @include setIcons(icon_nav_open, rem(24px), '../assets/icon/header', $blue-300);
             &:hover {
                 background-color: $gray-100;
             }
