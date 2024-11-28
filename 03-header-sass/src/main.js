@@ -23,13 +23,10 @@ const navigation = document.querySelector('.navigation');
 const navIcon = document.querySelector('.icon_nav_open');
 
 btnNav.addEventListener('click', () => {
-    // 동적 변경
-    if (navigation.classList.toggle('active')) {
-        navigation.style.display = 'flex';
-    } else {
-        navigation.style.display = 'none';
-    }
-
+    // navigation 정적 변경
+    navigation.classList.toggle('active');
+    
+    // navIcon 동적 변경
     if (navigation.classList.contains('active')) {
         navIcon.style.maskImage = 'url("../assets/icon/header/icon_nav_close.svg")';
         navIcon.style.webkitMaskImage = 'url("../assets/icon/header/icon_nav_close.svg")';
