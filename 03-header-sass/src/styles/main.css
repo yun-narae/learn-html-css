@@ -61,7 +61,7 @@ body {
   border: none;
 }
 
-.header .btn-box__nav-btn, .header .btn-box, .header .social-wrap__list a, .header .navigation {
+.header .btn-box__nav-btn, .header .btn-box, .header .social-wrap__list a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,10 +69,9 @@ body {
 
 .header-wrapper {
   background-color: #f5f5f7;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
 }
 
@@ -96,8 +95,7 @@ body {
 }
 @media (min-width: 1020px) {
   .header {
-    grid-template-columns: 1fr 1fr auto;
-    column-gap: 2.5rem;
+    grid-template-columns: 1fr auto auto;
   }
 }
 .header .logo a {
@@ -118,17 +116,49 @@ body {
 }
 .header .navigation {
   text-align: center;
-  margin-top: 1.25rem;
-  margin-block-start: 1.25rem;
-  margin-bottom: 1.25rem;
-  margin-block-end: 1.25rem;
+  background-color: #f5f5f7;
+  padding-left: 1rem;
+  padding-inline-start: 1rem;
+  padding-right: 1rem;
+  padding-inline-end: 1rem;
+  padding-top: 1rem;
+  padding-block-start: 1rem;
+  padding-bottom: 1rem;
+  padding-block-end: 1rem;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5rem;
+  row-gap: 2.5rem;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+  position: absolute;
+  bottom: 0.0625rem;
+  left: 0;
+  right: 0;
+}
+.header .navigation.active {
+  transform: translateY(100%);
 }
 @media (min-width: 1020px) {
   .header .navigation {
-    margin-top: 0;
-    margin-block-start: 0;
-    margin-bottom: 0;
-    margin-block-end: 0;
+    height: auto;
+    padding-left: 0;
+    padding-inline-start: 0;
+    padding-right: 0;
+    padding-inline-end: 0;
+    padding-top: 0;
+    padding-block-start: 0;
+    padding-bottom: 0;
+    padding-block-end: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: unset;
+    transform: translateY(0%) !important;
   }
 }
 .header .navigation .menu {
@@ -197,6 +227,7 @@ body {
 }
 .header .social-wrap__list a .icon_social_youtube {
   mask-image: url("../assets/icon/header/icon_social_youtube.svg");
+  -webkit-mask-image: url("../assets/icon/header/icon_social_youtube.svg");
   background-color: #0071e3;
   width: 1.5rem;
   height: 1.5rem;
@@ -204,6 +235,7 @@ body {
 }
 .header .social-wrap__list a .icon_social_instagram {
   mask-image: url("../assets/icon/header/icon_social_instagram.svg");
+  -webkit-mask-image: url("../assets/icon/header/icon_social_instagram.svg");
   background-color: #0071e3;
   width: 24px;
   height: 24px;
@@ -211,6 +243,7 @@ body {
 }
 .header .social-wrap__list a .icon_social_facebook {
   mask-image: url("../assets/icon/header/icon_social_facebook.svg");
+  -webkit-mask-image: url("../assets/icon/header/icon_social_facebook.svg");
   background-color: #0071e3;
   width: 24px;
   height: 24px;
@@ -219,8 +252,12 @@ body {
 .header .social-wrap__list a:hover {
   background-color: rgb(225, 225, 225);
 }
+.header .btn-box {
+  width: 100%;
+}
 @media (min-width: 1020px) {
   .header .btn-box {
+    width: auto;
     justify-content: end;
   }
 }
@@ -234,8 +271,9 @@ body {
   right: 1rem;
   border-radius: 62.5rem;
 }
-.header .btn-box__nav-btn .icon_nav_close {
-  mask-image: url("../assets/icon/header/icon_nav_close.svg");
+.header .btn-box__nav-btn .icon_nav_open {
+  mask-image: url("../assets/icon/header/icon_nav_open.svg");
+  -webkit-mask-image: url("../assets/icon/header/icon_nav_open.svg");
   background-color: #0071e3;
   width: 1.5rem;
   height: 1.5rem;
@@ -258,8 +296,6 @@ body {
   font-size: 0.875rem;
   font-weight: bold;
   box-shadow: 0.1875rem 0.25rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
-  margin-block-end: 1.5rem;
   border-radius: 0.25rem;
   padding-left: 0.75rem;
   padding-inline-start: 0.75rem;
@@ -276,13 +312,5 @@ body {
 @media (min-width: 1020px) {
   .header .btn-box__more-btn {
     width: 7.5rem;
-    margin-left: 0;
-    margin-inline-start: 0;
-    margin-right: 0;
-    margin-inline-end: 0;
-    margin-top: 0;
-    margin-block-start: 0;
-    margin-bottom: 0;
-    margin-block-end: 0;
   }
 }

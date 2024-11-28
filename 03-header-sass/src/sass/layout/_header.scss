@@ -13,7 +13,7 @@
 
 .header-wrapper {
     background-color: rgba($white,1);
-    @include position(absolute,0);
+    @include position(fixed, 0 0 null 0);
 }
 
 .header {
@@ -23,8 +23,7 @@
     @include padding($base-spacing);
     @include position(relative,0);
     @include laptop {
-        grid-template-columns: 1fr 1fr auto;
-        column-gap: rem(40px);
+        grid-template-columns: 1fr auto auto;
     }
 
     .logo {
@@ -42,12 +41,30 @@
 
     .navigation {
         text-align: center;
-        @include marginY(rem(20px));
-        @extend %center;
-        @include laptop {
-            @include marginY(0);
+        background-color: rgba($white,1);
+        @include padding($base-spacing);
+        padding-bottom: 120px;
+        @include flexbox(column, null, center, center);
+        column-gap: rem(40px);
+        row-gap: rem(40px);
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        position: absolute;
+        bottom: rem(1px);
+        left: 0;
+        right: 0; 
+        // nav js
+        &.active {
+            transform: translateY(100%);
         }
-        
+        @include laptop {
+            height: auto;
+            @include padding(0);
+            @include flexbox(row, null, center, center);
+            position: unset;
+            transform: translateY(0%) !important;
+        }
+
         .menu {
             width: 100%;
             max-width: rem(732px);
@@ -102,8 +119,10 @@
     }
     
     .btn-box {
+        width: 100%;
         @extend %center;
         @include laptop {
+            width: auto;
             justify-content: end;
         }
         
@@ -112,7 +131,7 @@
             @include position(absolute, $base-spacing $base-spacing null null);
             @extend %button-reset, %center;
             @include radius(full);
-            @include setIcons(icon_nav_close, rem(24px), '../assets/icon/header', $blue-300);
+            @include setIcons(icon_nav_open, rem(24px), '../assets/icon/header', $blue-300);
             &:hover {
                 background-color: $gray-100;
             }
@@ -130,7 +149,6 @@
             font-size: $x-small-text;
             font-weight: bold;
             box-shadow: $box-shadow-1;
-            @include margin-block-end(rem(24px));
             @include radius(xs);
             @include padding($small-spacing);
             &:hover {
@@ -138,7 +156,6 @@
             }
             @include laptop {
                 width: rem(120px);
-                @include margin(0);
             }
         }
     }
