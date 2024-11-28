@@ -24,7 +24,6 @@
     @include position(relative,0);
     @include laptop {
         grid-template-columns: 1fr auto auto;
-        column-gap: rem(40px);
     }
 
     .logo {
@@ -42,16 +41,29 @@
 
     .navigation {
         text-align: center;
-        @include marginY(rem(20px));
+        background-color: rgba($white,1);
+        @include padding($base-spacing);
+        padding-bottom: 120px;
         @include flexbox(column, null, center, center);
         column-gap: rem(40px);
         row-gap: rem(40px);
-        @include laptop {
-            @include marginY(0);
-            @include flexbox(row, null, center, center);
-        }
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        position: absolute;
+        bottom: rem(1px);
+        left: 0;
+        right: 0; 
         // nav js
-        display: none;
+        &.active {
+            transform: translateY(100%);
+        }
+        @include laptop {
+            height: auto;
+            @include padding(0);
+            @include flexbox(row, null, center, center);
+            position: unset;
+            transform: translateY(0%) !important;
+        }
 
         .menu {
             width: 100%;
