@@ -1,0 +1,8 @@
+# 로그 파일
+*.log
+
+# node_modules 디렉터리
+node_modules/
+
+# 빌드 파일
+dist/
