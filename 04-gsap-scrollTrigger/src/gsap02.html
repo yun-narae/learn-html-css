@@ -79,12 +79,14 @@
             align-items: center;
             justify-content: center;
         }
+        section {
+            overflow: hidden;
+        }
         #section2, 
         #section4, 
         #section6, 
         #section8 {
             background-color: #222;
-            overflow: hidden;
         }
         .parallax__item__num {
             position: absolute;
@@ -450,6 +452,22 @@
             anticipatePin: 1,
             markers: true,
             id: "08"
+        });
+
+        // 09 이미지 확대하기
+        const ani9 = gsap.timeline();
+        ani9.to("#section9 .parallax__item__img", {scale: 15})
+            .to("#section9 .parallax__item__img", {autoAlpha:0})
+
+        ScrollTrigger.create({
+            animation: ani9,
+            trigger: "#section9",
+            start: "-400",
+            end: "+=600",
+            scrub: true,
+            anticipatePin: 1,
+            markers: true,
+            id: "09"
         });
     </script>
 </body>
