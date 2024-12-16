@@ -397,7 +397,21 @@
             id: "05"
         });
 
+        // 06 텍스트 확대하기
+        const ani6 = gsap.timeline();
+        ani6.to("#section6 .parallax__item__text", {scale:60, duration: 2})
+            .to("#section6 .parallax__item__text", {autoAlpha: 0});
 
+        ScrollTrigger.create({
+            animation: ani6,
+            trigger: "#section6",
+            start: "top top",
+            end: "+=4000",
+            scrub: true,
+            anticipatePin: 1,
+            markers: true,
+            id: "06"
+        });
     </script>
 </body>
 </html>
