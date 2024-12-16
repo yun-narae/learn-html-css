@@ -433,6 +433,24 @@
             markers: true,
             id: "07"
         });
+        
+        // 08 텍스트 애니메이션
+        const ani8 = gsap.timeline();
+        ani8.from("#section8 .t1", {x: innerWidth *1})
+            .from("#section8 .t2", {x: innerWidth *-1})
+            .from("#section8 .t3", {x: innerWidth *1})
+            .from("#section8 .i1", {x: innerWidth *1});
+
+        ScrollTrigger.create({
+            animation: ani8,
+            trigger: "#section8",
+            start: "-200",
+            end: "+=600",
+            scrub: true,
+            anticipatePin: 1,
+            markers: true,
+            id: "08"
+        });
     </script>
 </body>
 </html>
