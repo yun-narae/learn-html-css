@@ -412,6 +412,27 @@
             markers: true,
             id: "06"
         });
+
+        // 07 텍스트 제자리 변환
+        const ani7 = gsap.timeline();
+        ani7.from("#section7 .t1", {autoAlpha: 0, duration: 1, y: 50}, "+=1")
+            .from("#section7 .t2", {autoAlpha: 0, duration: 1, y: 50}, "+=1")
+            .from("#section7 .t3", {autoAlpha: 0, duration: 1, y: 50}, "+=1")
+            .from("#section7 .t4", {autoAlpha: 0, duration: 1, y: 50}, "+=1")
+            .from("#section7 .t5", {autoAlpha: 0, duration: 1, y: 50}, "+=1")
+            .from("#section7 .t6", {autoAlpha: 0, duration: 1, y: 50}, "+=1")
+            .from("#section7 .t7", {autoAlpha: 0, duration: 1, y: 50}, "+=1");
+
+        ScrollTrigger.create({
+            animation: ani7,
+            trigger: "#section7",
+            start: "top top",
+            end: "+=600",
+            scrub: true,
+            anticipatePin: 1,
+            markers: true,
+            id: "07"
+        });
     </script>
 </body>
 </html>
