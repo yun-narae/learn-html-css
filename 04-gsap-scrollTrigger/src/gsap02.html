@@ -330,6 +330,29 @@
             id: "02"
         });
 
+        // 03 이미지 랜덤으로 나오도록
+        const ani3 = gsap.timeline();
+        ani3.from("#section3 .parallax__item__img", {
+            y: -100,
+            autoAlpha: 0,
+            ease: "back.out(4)",
+            stagger: {
+                amount: 0.3,
+                from: "random"
+            } // 자식들이 각각 다른 값을 갖도록 
+        });
+
+        ScrollTrigger.create({
+            animation: ani3,
+            trigger: "#section3",
+            start: "top top",
+            end: "+=500",
+            scrub: true,
+            anticipatePin: 1,
+            markers: true,
+            id: "03"
+        });
+
 
     </script>
 </body>
