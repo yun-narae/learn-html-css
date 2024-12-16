@@ -373,6 +373,31 @@
             id: "04"
         });
 
+        // 05 텍스트 애니메이션
+        const ani5 = gsap.timeline();
+        // ani5.to("#section5 .t1", {xPercent:300})
+        //     .to("#section5 .t2", {xPercent:-300}, "-1") // "-1" 더 빨리 움직이도록
+        //     .to("#section5 .t3", {xPercent:300})
+        //     .to("#section5 .t4", {xPercent:-300});
+
+        // 나는 동시에 움직이고 싶다! 아무 텍스트를 같은걸로 준다.
+        ani5.to("#section5 .t1", {xPercent:300, autoAlpha: 0, }, "doit")
+            .to("#section5 .t2", {xPercent:-300, autoAlpha: 0, }, "doit")
+            .to("#section5 .t3", {xPercent:300, autoAlpha: 0, }, "doit")
+            .to("#section5 .t4", {xPercent:-300, autoAlpha: 0, }, "doit");
+
+        ScrollTrigger.create({
+            animation: ani5,
+            trigger: "#section5",
+            start: "top top",
+            end: "+=300",
+            scrub: true,
+            anticipatePin: 1,
+            markers: true,
+            id: "05"
+        });
+
+
     </script>
 </body>
 </html>
