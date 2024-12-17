@@ -287,18 +287,50 @@
 
 
         // 01-하나만 이질감 표현하기
-        gsap.to(".parallax__item__desc", {
-            yPercent: -200,
-            ease: "none",
-            duration: 0.5,
-            scrollTrigger: {
-                trigger: ".parallax__item__desc",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true,
-                markers: true,
-            }
+        // gsap.to(".parallax__item__desc", {
+        //     yPercent: -200,
+        //     ease: "none",
+        //     duration: 0.5,
+        //     scrollTrigger: {
+        //         trigger: ".parallax__item__desc",
+        //         start: "top bottom",
+        //         end: "bottom top",
+        //         scrub: true,
+        //         markers: true,
+        //     }
+        // });
+
+        // 02-여러개 이질감 표현하기
+            //utils로 여러개 선택
+        gsap.utils.toArray(".parallax__item__desc").forEach(item => {
+            gsap.to(item, {
+                yPercent: -200,
+                ease: "none",
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                    markers: false,
+                }
+            });
         });
+
+        gsap.utils.toArray(".parallax__item__num").forEach(item => {
+            gsap.to(item, {
+                xPercent: -100,
+                ease: "none",
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                    markers: false,
+                }
+            })
+        })
     </script>
 </body>
 </html>
