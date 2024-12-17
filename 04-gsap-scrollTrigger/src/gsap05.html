@@ -284,18 +284,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script>
-        gsap.utils.toArray(".reveal").forEach(item => {
-            ScrollTrigger.create({
-                trigger: item,
-                start: "top bottom",
-                end: "bottom top",
-                markers: true,
-                onEnter: () => {animate(item)}
-            });
+        const hide = (item) => {
+            gsap.set(item, {autoAlpha:0});
+        };
 
-            item.style.opacity = "0";
-
-            const animate = (item) => {
+        const animate = (item) => {
                 // if else문
                 let x = 100;
                 let y = 0;
@@ -331,6 +324,17 @@
                     ease: "expo"
                 });
             };
+
+        gsap.utils.toArray(".reveal").forEach(item => {
+            hide(item);
+
+            ScrollTrigger.create({
+                trigger: item,
+                start: "top bottom",
+                end: "bottom top",
+                markers: true,
+                onEnter: () => {animate(item)}
+            });
         });
 
     </script>
