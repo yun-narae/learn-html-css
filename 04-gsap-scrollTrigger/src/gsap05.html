@@ -191,8 +191,8 @@
     <main id="parallax__cont">
         <section id="section1" class="parallax__item">
             <span class="parallax__item__num">01</span>
-            <h2 class="parallax__item__title">section1</h2>
-            <figure class="parallax__item__imgWrap">
+            <h2 class="parallax__item__title reveal reveal_LTR">section1</h2>
+            <figure class="parallax__item__imgWrap reveal reveal_LTR">
                 <div class="parallax__item__img"></div>
             </figure>
             <p class="parallax__item__desc reveal reveal_LTR">reveal_LTR 높은 목표를 세우고, 스스로 채찍질 한다.</p>
@@ -200,12 +200,12 @@
         <!-- //section1 -->
 
         <section id="section2" class="parallax__item">
-            <span class="parallax__item__num">02</span>
-            <h2 class="parallax__item__title">section2</h2>
-            <figure class="parallax__item__imgWrap">
+            <span class="parallax__item__num reveal" data-delay="0.3">02</span>
+            <h2 class="parallax__item__title reveal reveal_TTB" data-delay="0.8">section2</h2>
+            <figure class="parallax__item__imgWrap reveal reveal_TTB" data-delay="0.6">
                 <div class="parallax__item__img"></div>
             </figure>
-            <p class="parallax__item__desc reveal reveal_BTT">reveal_BTT 결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
+            <p class="parallax__item__desc reveal reveal_BTT" data-delay="0.8">reveal_BTT 결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
         </section>
         <!-- //section2 -->
 
@@ -287,8 +287,8 @@
         gsap.utils.toArray(".reveal").forEach(item => {
             ScrollTrigger.create({
                 trigger: item,
-                start: "top 80%",
-                end: "bottom 20%",
+                start: "top bottom",
+                end: "bottom top",
                 markers: true,
                 onEnter: () => {animate(item)}
             });
@@ -299,6 +299,7 @@
                 // if else문
                 let x = 100;
                 let y = 0;
+                let delay = item.dataset.delay
 
                 if(item.classList.contains("reveal_LTR")){
                     x = -100,
@@ -324,6 +325,7 @@
                     autoAlpha: 1,
                     x: 0,
                     y: 0,
+                    delay: delay,
                     duration: 1.25,
                     overwrite: "auto", //overwrite: "auto" 속성을 추가하여, 애니메이션이 한번만 작동하도록
                     ease: "expo"
