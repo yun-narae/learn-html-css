@@ -287,7 +287,9 @@
         // 01-텍스트 분리하기
         let text = document.querySelector(".split");
         let splitText = text.innerText; //텍스트 가져오기
+        let splitText = text.innerText; //텍스트 가져오기
         let splitWrap = splitText.split("").join("</span><span>"); //.join()을 통해 배열을 문자로 변환
+        text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>"; //맨 앞, 뒤에 span으로 감싸주는 작업이 필요
         text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>"; //맨 앞, 뒤에 span으로 감싸주는 작업이 필요
 
         console.log(splitText);
