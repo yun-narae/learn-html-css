@@ -305,25 +305,25 @@
 
 
         // 03-모든 텍스트 분리하기 : 여백 표현하기
-        document.querySelectorAll(".split").forEach(text => {
-            let theText = text.innerText; //텍스트 가져오기
-            let newText = "";
+        // document.querySelectorAll(".split").forEach(text => {
+        //     let theText = text.innerText; //텍스트 가져오기
+        //     let newText = "";
 
-            for(let i=0; i<text.innerText.length; i++){
-                newText += "<span aria-hidden='true'>";
-                if(text.innerText[i] == " "){
-                    newText += "&nbsp";
-                } else {
-                    newText += text.innerText[i];
-                }
-                newText += "</span>";
-            }
+        //     for(let i=0; i<text.innerText.length; i++){
+        //         newText += "<span aria-hidden='true'>";
+        //         if(text.innerText[i] == " "){
+        //             newText += "&nbsp";
+        //         } else {
+        //             newText += text.innerText[i];
+        //         }
+        //         newText += "</span>";
+        //     }
 
-            text.innerHTML = newText;
-            text.setAttribute("aria-label", theText)
+        //     text.innerHTML = newText;
+        //     text.setAttribute("aria-label", theText)
 
-            console.log(newText);
-        });
+        //     console.log(newText);
+        // });
 
         // 단수
         // gsap.from(".split span", {
@@ -342,8 +342,36 @@
         // });
         
         //복수
-        gsap.utils.toArray(".split").forEach(text => {
-            gsap.from(text.querySelectorAll("span"), {
+        // gsap.utils.toArray(".split").forEach(text => {
+        //     gsap.from(text.querySelectorAll("span"), {
+        //         yPercent: 100,
+        //         autoAlpha: 0,
+        //         duration: 1,
+        //         y: 100,
+        //         ease: "circ.out",
+        //         stagger: {
+        //             amount: 1,
+        //             from: "random"
+        //         },
+        //         scrollTrigger: {
+        //             trigger: text,
+        //             start: "top bottom",
+        //             end: "+=400",
+        //             markers: true
+        //         }
+        //     });
+        // });
+
+        // 04-split-type 사용하기
+        const targets = gsap.utils.toArray(".split");
+        
+        targets.forEach(target => {
+            let splitClient = new SplitType(target, {type: "lines, words, chars"});
+            let lines = splitClient.lines; //한 줄씩
+            let words = splitClient.words; //한 단어씩
+            let chars = splitClient.chars; //한 글자씩
+
+            gsap.from(chars,{
                 yPercent: 100,
                 autoAlpha: 0,
                 duration: 1,
@@ -352,15 +380,16 @@
                 stagger: {
                     amount: 1,
                     from: "random"
-                },
+                }, 
                 scrollTrigger: {
-                    trigger: text,
+                    trigger: target,
                     start: "top bottom",
                     end: "+=400",
                     markers: true
                 }
             });
         });
+
     </script>
 </body>
 </html>
