@@ -285,24 +285,82 @@
     <script src="https://unpkg.com/split-type"></script>
     <script>
         // 01-텍스트 분리하기
-        let text = document.querySelector(".split");
-        let splitText = text.innerText; //텍스트 가져오기
-        let splitText = text.innerText; //텍스트 가져오기
-        let splitWrap = splitText.split("").join("</span><span>"); //.join()을 통해 배열을 문자로 변환
-        text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>"; //맨 앞, 뒤에 span으로 감싸주는 작업이 필요
-        text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>"; //맨 앞, 뒤에 span으로 감싸주는 작업이 필요
+        // let text = document.querySelector(".split");
+        // let splitText = text.innerText; //텍스트 가져오기
+        // let splitWrap = splitText.split("").join("</span><span>"); //.join()을 통해 배열을 문자로 변환
+        // text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>"; //맨 앞, 뒤에 span으로 감싸주는 작업이 필요
 
-        console.log(splitText);
-        console.log(splitWrap);
+            // console.log(splitText);
+            // console.log(splitWrap);
+
 
         // 02-모든 텍스트 분리하기
+        // document.querySelectorAll(".split").forEach(text => {
+        //     let splitWrap = text.innerText.split("").join("</span><span aria-hidden='true'>");
+        //         text.innerHTML = "<span aria-hidden='true'>" + splitWrap + "</span>";
+        //         text.setAttribute("aria-label", text.innerText)
+        // });
+            // 문제1) 접근성이 부족하다. 따라서 aria-hidden='true'로 감춘다, 그리고 상위 부모에게 aria-label
+            // 문제2) span display: inline --> inline-block을 주게되면 빈칸이 없어진다.
+
+
+        // 03-모든 텍스트 분리하기 : 여백 표현하기
         document.querySelectorAll(".split").forEach(text => {
-            let splitWrap = text.innerText.split("").join("</span><span aria-hidden='true'>");
-                text.innerHTML = "<span aria-hidden='true'>" + splitWrap + "</span>";
-                text.setAttribute("aria-label", text.innerText)
+            let theText = text.innerText; //텍스트 가져오기
+            let newText = "";
+
+            for(let i=0; i<text.innerText.length; i++){
+                newText += "<span aria-hidden='true'>";
+                if(text.innerText[i] == " "){
+                    newText += "&nbsp";
+                } else {
+                    newText += text.innerText[i];
+                }
+                newText += "</span>";
+            }
+
+            text.innerHTML = newText;
+            text.setAttribute("aria-label", theText)
+
+            console.log(newText);
         });
-        // 문제1) 접근성이 부족하다. 따라서 aria-hidden='true'로 감춘다, 그리고 상위 부모에게 aria-label
-        // 문제2) span display: inline --> inline-block을 주게되면 빈칸이 없어진다.
+
+        // 단수
+        // gsap.from(".split span", {
+        //     yPercent: 100,
+        //     autoAlpha: 0,
+        //     duration: 3,
+        //     ease: "circ.out",
+        //     stagger: 0.1,
+
+        //     scrollTrigger: {
+        //         trigger: ".split",
+        //         start: "top center",
+        //         markers: true,
+        //         // scrub:1,
+        //     }
+        // });
+        
+        //복수
+        gsap.utils.toArray(".split").forEach(text => {
+            gsap.from(text.querySelectorAll("span"), {
+                yPercent: 100,
+                autoAlpha: 0,
+                duration: 1,
+                y: 100,
+                ease: "circ.out",
+                stagger: {
+                    amount: 1,
+                    from: "random"
+                },
+                scrollTrigger: {
+                    trigger: text,
+                    start: "top bottom",
+                    end: "+=400",
+                    markers: true
+                }
+            });
+        });
     </script>
 </body>
 </html>
