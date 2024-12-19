@@ -1,0 +1,25 @@
+# Node.js 관련 파일 제외
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# 빌드 파일 제외
+dist/
+build/
+
+# 환경 변수 파일 제외
+.env
+.env.local
+.env.*.local
+
+# 운영 체제 관련 파일 제외 (macOS, Windows 등)
+.DS_Store
+Thumbs.db
+
+# IDE/에디터 설정 파일 제외
+.vscode/
+.idea/
+
+# 로그 파일 제외
+*.log
