@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tailwind</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <!-- Material Icons CDN (아이콘 세트) Rounded -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+</head>
+<body>
+    <header class="fixed top-0 left-0 w-screen bg-blue-500 px-4 py-2 text-white flex-center lg:px-40">
+        <div class="w-full md:flex-between lg:flex-between">
+            <p class="">Hello,Adam</p>
+            <div class="relative mt-4 mb-2 md:w-full lg:w-full">
+                <span class="material-symbols-rounded text-blue-600 absolute left-2 top-3">search</span>
+                <input type="text" class="text-blue-600 w-full p-3 pl-10 rounded-xl" placeholder="Search"/>
+            </div>
+        </div>
+    </header>
+    <section class="p-4 mt-32 lg:px-40">
+        <div class="flex-between">
+            <h1 class="text-3xl font-semibold ">Let's find<br/> Material Icons</h1>
+            <button class="border border-gray-300 w-12 h-12 rounded-full flex-center active:bg-blue-500">
+                <span class="material-symbols-rounded">arrow_downward</span>
+            </button>
+        </div>
+
+        <ul class="flex flex-wrap mt-4 gap-2">
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 홈 아이콘 -->
+                <span class="material-symbols-rounded">home</span>
+                <!-- <p>home</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 검색 아이콘 -->
+                <span class="material-symbols-rounded">search</span>
+                <!-- <p>search</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 메뉴1 아이콘 -->
+                <span class="material-symbols-rounded">menu</span>
+                <!-- <p>menu</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 메뉴2 아이콘 -->
+                <span class="material-symbols-rounded">density_medium</span>
+                <!-- <p>menu</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 닫기 아이콘 -->
+                <span class="material-symbols-rounded">close</span>
+                <!-- <p>close</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 하트 아이콘 -->
+                <span class="material-symbols-rounded">favorite</span>
+                <!-- <p>heart</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 추가 아이콘 -->
+                <span class="material-symbols-rounded">add</span>
+                <!-- <p>add</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 뒤로가기 아이콘 -->
+                <span class="material-symbols-rounded">arrow_back</span>
+                <!-- <p>arrow</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 심플 뒤로가기 아이콘 -->
+                <span class="material-symbols-rounded">arrow_back_ios</span>
+                <!-- <p>arrow</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 앞으로가기 아이콘 -->
+                <span class="material-symbols-rounded">arrow_forward</span>
+                <!-- <p>arrow</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 심플 앞으로가기 아이콘 -->
+                <span class="material-symbols-rounded">arrow_forward_ios</span>
+                <!-- <p>arrow</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 체크 on 아이콘 -->
+                <span class="material-symbols-rounded">check_box</span>
+                <!-- <p>check on</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 체크 off 아이콘 -->
+                <span class="material-symbols-rounded">check_box_outline_blank</span>
+                <!-- <p>check off</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 체크 on 아이콘 -->
+                <span class="material-symbols-rounded">task_alt</span>
+                <!-- <p>check on</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 체크 off 아이콘 -->
+                <span class="material-symbols-rounded">circle</span>
+                <!-- <p>check off</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 별 아이콘 -->
+                <span class="material-symbols-rounded">kid_star</span>
+                <!-- <p>star</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- user 아이콘 -->
+                <span class="material-symbols-rounded">account_circle</span>
+                <!-- <p>user</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 장바구니 아이콘 -->
+                <span class="material-symbols-rounded">shopping_bag</span>
+                <!-- <p>shopping</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 북마크 아이콘 -->
+                <span class="material-symbols-rounded">bookmark</span>
+                <!-- <p>bookmark</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 캘린더 아이콘 -->
+                <span class="material-symbols-rounded">calendar_today</span>
+                <!-- <p>calendar</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 메일 아이콘 -->
+                <span class="material-symbols-rounded">mail</span>
+                <!-- <p>mail</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 전화 아이콘 -->
+                <span class="material-symbols-rounded">call</span>
+                <!-- <p>call</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 알림 아이콘 -->
+                <span class="material-symbols-rounded">notifications</span>
+                <!-- <p>notifications</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 수정 아이콘 -->
+                <span class="material-symbols-rounded">edit</span>
+                <!-- <p>edit</p> -->
+            </li>
+            <li class="flex-center p-4 bg-slate-200 rounded-lg border border-slate-300 cursor-pointer hover:bg-slate-300">
+                <!-- 재생 아이콘 -->
+                <span class="material-symbols-rounded">play_arrow</span>
+                <!-- <p>play</p> -->
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
