@@ -1,5 +1,34 @@
 # tailwind 공부
 
+## 설치하기
+```
+npm install -D tailwindcss postcss autoprefixer
+```
+**tailwind.config.js를 생성**
+```
+npx tailwindcss init
+```
+**css파일에 Tailwind 지시어 추가**
+```
+/* Tailwind 기본 지시어 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+**컴파일러**
+dist 폴더가 생성되어야하며 생성되지 않는다면...🥲🥲
+👉 캐시삭제하고 서버 다시 돌려보기
+```
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+```
+
+**html에 css연결**
+```
+<link rel="stylesheet" href="/dist/output.css" />
+```
+**Hello, tailwind**
+![스크린샷 2024-12-19 오후 5 29 52](https://github.com/user-attachments/assets/475be9fc-4f7d-46dc-91a4-8ffed2e4a42e)
+
 ## 공부한 것
 **dist/output.css CSS파일 빌드**
 ```
