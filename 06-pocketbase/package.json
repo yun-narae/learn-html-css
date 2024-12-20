@@ -1,0 +1,17 @@
+{
+  "name": "06-pocketbase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server",
+    "pocketbase": "pocketbase/pocketbase serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
