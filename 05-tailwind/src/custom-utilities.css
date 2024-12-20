@@ -1,0 +1,15 @@
+@layer utilities {
+    .flex-between {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--gap-header);
+    }
+
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--gap-value);
+    }
+}
