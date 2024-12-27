@@ -19,11 +19,10 @@ function App() {
 
     return (
         <Router>
-            {/* Header에 isLoggedIn 상태 전달 */}
             <Header isLoggedIn={isLoggedIn} />
             <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
+                <Route index element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
                 <Route
                 path="/login"
                 element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}

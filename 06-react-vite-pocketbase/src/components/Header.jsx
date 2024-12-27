@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import pb from "../lib/pocketbase";
 
 function Header({ isLoggedIn }) {
+
+    const user = pb.authStore.model;
+
     return (
         <>
             <nav className="mb-4 p-2 bg-blue-500">
@@ -8,13 +12,19 @@ function Header({ isLoggedIn }) {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                    {/* isLoggedIn이 false일 때만 Register 링크 표시 */}
                     {!isLoggedIn && (
+                        <li>
+                            <Link to="/login">Login</Link>
+                        </li>
+                    )}
+                    {!isLoggedIn && (
+                        <li>
+                            <Link to="/register">Register</Link>
+                        </li>
+                    )}
+                    {isLoggedIn && user && (
                     <li>
-                        <Link to="/register">Register</Link>
+                        <p>{user.name}님 안녕하세요</p>
                     </li>
                     )}
                 </ul>
