@@ -2,12 +2,12 @@ import { useState } from "react";
 import pb from "../lib/pocketbase";
 import { useForm } from "react-hook-form";
 
-function Login(props) {
+function Login({ setIsLoggedIn }) {
   const { register, handleSubmit } = useForm();
   const [isLoading, setLoading] = useState(false);
   const [dummy, setDummy] = useState(0);
 
-  const isLoggedIn = pb.authStore.isValid;
+  const isLoggedInStatus = pb.authStore.isValid;
 
   async function login(data) {
     console.log(data);
@@ -16,6 +16,10 @@ function Login(props) {
       const authData = await pb
         .collection("users")
         .authWithPassword(data.email, data.password);
+      // Set the isLoggedIn state to true on successful login
+      setIsLoggedIn(true);
+      // Optionally, you can save the login status to localStorage
+      localStorage.setItem("isLoggedIn", "true");
     } catch (e) {
       console.log(e);
     }
@@ -25,17 +29,19 @@ function Login(props) {
   function logout() {
     pb.authStore.clear();
     setDummy(Math.random());
+    setIsLoggedIn(false); // Set the isLoggedIn state to false on logout
+    localStorage.removeItem("isLoggedIn");
   }
 
   return (
     <div className="flex flex-col items-center justify-center mx-auto w-full">
       <h1 className="text-2xl mb-4">Login</h1>
       <p className="py-4">
-        {isLoggedIn
-          ? `You are : ${pb.authStore.model.email}`
+        {isLoggedInStatus
+          ? `You are: ${pb.authStore.model.email}`
           : "You are not logged in!"}
       </p>
-      {isLoggedIn && (
+      {isLoggedInStatus && (
         <button
           className="border rounded-md bg-gray-400 py-1 px-4"
           onClick={logout}
@@ -44,8 +50,11 @@ function Login(props) {
         </button>
       )}
 
-      {!isLoggedIn && (
-        <form className="flex flex-col w-full justify-center items-center space-y-4" onSubmit={handleSubmit(login)}>
+      {!isLoggedInStatus && (
+        <form
+          className="flex flex-col w-full justify-center items-center space-y-4"
+          onSubmit={handleSubmit(login)}
+        >
           <input
             className="border rounded-md p-1"
             type="text"
