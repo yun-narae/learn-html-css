@@ -29,7 +29,7 @@ function Register() {
         password: data.password,
         passwordConfirm: data.passwordConfirm,
       });
-      if (record) navigate("/");
+      if (record) navigate("/registration-success"); // 성공 시 완료 페이지로 이동
     } catch (error) {
       console.error("회원가입 오류:", error);
       setApiError(error.message || "An error occurred during registration.");
