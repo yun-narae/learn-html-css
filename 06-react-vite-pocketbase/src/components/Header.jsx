@@ -12,6 +12,9 @@ function Header({ isLoggedIn }) {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
+                    <li>
+                        <Link to="/fileList">FileList</Link>
+                    </li>
                     {!isLoggedIn && (
                         <li>
                             <Link to="/login">Login</Link>
