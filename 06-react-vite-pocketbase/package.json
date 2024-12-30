@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://username.github.io/learn-html-css/06-react-vite-pocketbase",
+  "homepage": "https://yun-narae.github.io//learn-html-css/06-react-vite-pocketbase",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,7 +12,7 @@
     "pocketbase": "pocketbase/pocketbase serve",
     "build:css": "tailwindcss -i ./src/styles/input.css -o ./dist/output.css",
     "start": "npm run dev & npm run build:css",
-    "predeploy": "npm run vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
