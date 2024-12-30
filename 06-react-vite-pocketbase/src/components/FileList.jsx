@@ -3,46 +3,48 @@ import pb from "../lib/pocketbase";
 import getPbImageURL from "../lib/getPbImageURL";
 
 const FileList = () => {
-    const [imageUrls, setImageUrls] = useState([]);
+    const [fileData, setFileData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const controller = new AbortController(); // AbortController 생성
-        const fetchAllFiles = async () => {
+        const fetchFiles = async () => {
             try {
-                const files = await pb.collection("files").getFullList(1, {
-                    autoCancel: false,
-                    signal: controller.signal, // AbortController와 연결
-                });
-
-                const urls = files.map((file) =>
-                    getPbImageURL(file, "photo")
-                );
-                setImageUrls(urls);
+                const files = await pb.collection("files").getFullList(1, { autoCancel: false });
+                setFileData(files.map(file => ({
+                    imageUrl: getPbImageURL(file, "photo"),
+                    name: file.name || "No name",
+                    price: file.price || 0,
+                })));
             } catch (error) {
-                if (error.name !== "AbortError") {
-                    console.error("파일 데이터 불러오기 오류:", error);
-                }
+                console.error("Error fetching files:", error);
             } finally {
                 setIsLoading(false);
             }
         };
 
-        fetchAllFiles();
+        fetchFiles();
     }, []);
 
+    if (isLoading) return <p>Loading files...</p>;
+    if (!fileData.length) return <p>No files available.</p>;
+
     return (
-        <div>
-            <h2>Uploaded Images</h2>
-            {isLoading ? (
-                <p>Loading images...</p>
-            ) : imageUrls.length > 0 ? (
-                imageUrls.map((url, index) => (
-                    <img key={index} src={url} alt={`Uploaded ${index + 1}`} width="200" />
-                ))
-            ) : (
-                <p>No images available.</p>
-            )}
+        <div className="mt-6">
+            <h2 className="sr-only">제품 리스트</h2>
+            <ul className="grid grid-cols-2 gap-2 md:gap-4 md:mb-6 md:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+                {fileData.map((file, index) => (
+                    <li key={index} className="cursor-pointer">
+                        <figure className="rounded-xl overflow-hidden mb-2">
+                            <img src={file.imageUrl} alt={file.name} className="w-full" />
+                            {/* isLoggedIn으로 로그인 되어있다면 a링크 통해서 상세로 없으면 로그인 하는 페이지로*/}
+                        </figure>
+                        <div className="flex flex-col">
+                            <span className="text-sm font-bold">{file.name}</span>
+                            <span className="text-sm font-bold text-zinc-600">{file.price}원</span>
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
