@@ -10,9 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "pocketbase": "pocketbase/pocketbase serve",
-    "build:css": "tailwindcss -i ./src/styles/input.css -o ./dist/output.css --watch",
+    "build:css": "tailwindcss -i ./src/styles/input.css -o ./dist/output.css",
     "start": "npm run dev & npm run build:css",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:css & vite build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
