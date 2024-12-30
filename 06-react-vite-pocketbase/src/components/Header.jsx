@@ -8,8 +8,8 @@ function Header({ isLoggedIn, isdarkMode, setDarkMode }) {
     };
 
     return (
-        <nav className="mb-4 p-2 bg-blue-500 dark:bg-gray-800">
-            <ul className="flex gap-4 items-center p-4 text-white">
+        <nav className="fixed w-full p-4 bg-blue-500 dark:bg-gray-800">
+            <ul className="flex gap-4 items-center text-white">
                 <li>
                     <Link to="/" className="hover:underline">
                         Home

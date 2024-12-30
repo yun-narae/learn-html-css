@@ -39,8 +39,8 @@ const FileList = () => {
                             {/* isLoggedIn으로 로그인 되어있다면 a링크 통해서 상세로 없으면 로그인 하는 페이지로*/}
                         </figure>
                         <div className="flex flex-col">
-                            <span className="text-sm font-bold">{file.name}</span>
-                            <span className="text-sm font-bold text-zinc-600">{file.price}원</span>
+                            <span className="text-sm font-bold dark:text-white">{file.name}</span>
+                            <span className="text-sm font-bold text-zinc-600 dark:text-slate-400">{file.price}원</span>
                         </div>
                     </li>
                 ))}

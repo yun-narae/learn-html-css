@@ -21,7 +21,7 @@ const Home = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <>
-      <h1>Welcome to PocketBase Tutorial!</h1>
+      <h1 className="dark:text-white">Welcome to PocketBase Tutorial!</h1>
       {isLoggedIn && (
         <button
           className="border rounded-md bg-gray-400 py-1 px-4"
